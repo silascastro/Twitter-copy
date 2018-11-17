@@ -1,0 +1,43 @@
+.corpo  {
+   width: 50%;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+.corpo .username{
+    text-align: center;
+}
+
+.corpo img{
+    border-radius: 55px;
+    height: 150px; width: 200px; margin-top: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.topnav{
+    
+    margin-bottom: 20px;
+    overflow: hidden;
+    text-align: center;
+    padding-left: 27%;
+    padding-right: 28%;
+}
+.topnav a{
+    float: left;
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    border-bottom: 3px solid transparent;
+}
+
+.topnav a:hover{
+    border-bottom: 3px solid black;
+}
+
+a.activate{
+    border-bottom: 3px solid black;
+}

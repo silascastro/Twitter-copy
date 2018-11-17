@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %} {{super()}} - Profile{% endblock %}
+
+
+
+{% block content %}
+
+   <section class="corpo" text-center> 
+        <img src="{{ url_for('static',filename="imagens/profile.png") }}">
+        <h1 class="username">{{ current_user.username }}</h1>
+
+        <!--<
+                div class="textn-group" role="group">
+                <button type="button" class="btn btn-secondary">Left</button>
+                <button type="button" class="btn btn-secondary">Middle</button>
+                <button type="button" class="btn btn-secondary">Right</button>
+        </div>
+        -->
+
+        <div class="topnav" >
+                <a href="#" class="activate">Toiltes</a>
+                <a href="#">Seguidores</a>
+                <a href="">seguindo</a>
+        </div>
+        
+
+
+   </section>
+{% endblock %}
