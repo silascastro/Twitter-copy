@@ -31,7 +31,7 @@ class User(db.Model):
         self.email = email
 
     def __repr__(self):
-        return "<User %r>"%self.username
+        return "<User %s>"%self.username
     
 
 class Post(db.Model):
@@ -49,7 +49,7 @@ class Post(db.Model):
 
     
     def __repr__(self):
-        return "<Post %r"%self.id
+        return "%s"%self.content
 
 
 class Follow(db.Model):

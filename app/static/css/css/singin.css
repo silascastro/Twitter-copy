@@ -1,0 +1,9 @@
+.container{
+    margin: 0 auto;
+    width: 940px;
+}
+
+.container form{
+    padding-left: 300px;
+    padding-right: 300px;
+}

@@ -13,3 +13,6 @@ class SinginForm(FlaskForm):
     name = StringField('name')
     email = StringField('email')
 
+class Toilt(FlaskForm):
+    text = StringField('text',validators=[DataRequired()])
+

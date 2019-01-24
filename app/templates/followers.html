@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+
+{% block title %} {{super()}} - followers{% endblock %}
+
+
+{% block content %}
+   <section class="corpo" text-center> 
+        <img src="{{ url_for('static',filename="imagens/profile.png") }}">
+        <h1 class="username">{{ current_user.username }}</h1>
+
+        <div class="topnav">
+                <a href="{{ url_for('profile', username=current_user.username)}}" >Toiltes</a>
+                <a href="{{ url_for('followers',username=current_user.username) }}" class="activate">Seguidores</a>
+                <a href="{{ url_for('following', username=current_user.username)}}">seguindo</a>
+        </div>
+        
+
+
+   </section>
+
+
+
+{% endblock %}

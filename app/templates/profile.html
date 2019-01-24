@@ -10,19 +10,30 @@
         <img src="{{ url_for('static',filename="imagens/profile.png") }}">
         <h1 class="username">{{ current_user.username }}</h1>
 
-        <!--<
-                div class="textn-group" role="group">
-                <button type="button" class="btn btn-secondary">Left</button>
-                <button type="button" class="btn btn-secondary">Middle</button>
-                <button type="button" class="btn btn-secondary">Right</button>
-        </div>
-        -->
-
         <div class="topnav" >
-                <a href="#" class="activate">Toiltes</a>
-                <a href="#">Seguidores</a>
-                <a href="">seguindo</a>
+                <a href="{{ url_for('profile', username=current_user.username)}}" class="activate">Toiltes</a>
+                <a href="{{ url_for('followers',username=current_user.username) }}">Seguidores</a>
+                <a href="{{ url_for('following', username=current_user.username)}}">seguindo</a>
         </div>
+
+        <ul>
+            {% for post in posts %}
+               <lo> <div class="card">
+                        <div class="card-header">
+                                <p class="hora">2018, november, 18</p>
+                        </div>
+
+                        <div class="card-body">
+                                
+                        
+                        <p>{{ post }}</p>
+                        
+                        
+                        </div>
+                     </div>
+                </lo>
+            {% endfor %}
+        <ul>
         
 
 

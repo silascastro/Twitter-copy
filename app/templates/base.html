@@ -11,6 +11,7 @@
     <!-- Bootstrap core CSS -->
     <link href="{{ url_for('static',filename='css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ url_for('static', filename='css/css/profile.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/css/singin.css') }}" rel="stylesheet">
     <link href="{{ url_for('static',filename='css/css/base.css') }}" rel="stylesheet">
 
   
@@ -63,30 +64,49 @@
                     {% endif %}
                   </li>
                 </ul>
-                  <a class="btn btn-dark" data-toggle="modal" data-target="#toilt" href="{{ url_for('index') }}">
+
+
+                  
+                  {% if current_user.is_authenticated %}
+                  <a class="btn btn-dark" data-toggle="modal" data-target="#toilt" href="{{ url_for('index')}}">
                     <i class="fas fa-edit"></i>
                   </a>
-
-                  <!-- Modal -->
-                  <div class="modal fade" id="toilt" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="toilt" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                       <div class="modal-content">
                         <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
                           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                           </button>
                         </div>
                         <div class="modal-body">
-                          ...
+                          
+                          <form action="{{ url_for('submit') }}" method="POST">
+                            <div class="form-group">
+                              <label>Toilt</label>
+                              <textarea class="form-control" name="texto"></textarea>
+                              
+                            </div> 
+                            <div class="form-group">
+                              <button type="submit" class="btn btn-primary">Toiltar</button>
+                            </div>
+                          </form>
+                          <p> </p>
                         </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                          <button type="button" class="btn btn-primary">Save changes</button>
-                        </div>
+
                       </div>
                     </div>
                   </div>
+                  {% else %}
+                  <a class="btn btn-dark"  data-target="#toilt" href="{{ url_for('singin')}}">
+                    <i class="fas fa-edit"></i>
+                  </a>
+
+
+
+                  {% endif %}
+
+                  
 
               </div>
         </nav>
@@ -114,7 +134,7 @@
 
     <footer class="footer" style="text-align: center;">
       <p id="city">Manaus</p>
-      <p>&copy; 2016 Company, Inc.</p>
+      <p>&copy; 2018 Company, Inc.</p>
     </footer>
 
    <!-- /container -->
