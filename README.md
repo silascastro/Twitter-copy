@@ -1,5 +1,3 @@
-h1 align=center>Hell</h1>
-
 > tool to create flask websites
 
 # Topics
